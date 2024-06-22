@@ -1,3 +1,4 @@
+//Bank mangement system
 #include<stdio.h>
 #include<stdlib.h>
 struct Account {
@@ -69,17 +70,13 @@ void create_account()
     {
      printf("Error: File cannot be opened.\n");
     }
-    printf("Enter username: ");
-    fflush(stdin);
-    gets(a.username);
-    printf("Enter your address: ");
-    fflush(stdin);
-    gets(a.address);
-    printf("Enter your citizanship number: ");
+    printf("Enter username: \n");
+    fgets(a.username, sizeof(a.password), stdin);
+    printf("Enter your address: \n");
+    fgets(a.address, sizeof(a.password), stdin);
+    printf("Enter your citizanship number: /n");
     scanf("%ld",&a.citizanship_number);
-    printf("Enter a password: ");
-    fflush(stdin);
-    gets(a.password);
+    fgets(a.password, sizeof(a.password), stdin);
     printf("Enter today's date(mm/dd/yyyy):");
     scanf("%d/%d/%d",&d.dd,&d.mm,&d.yy);
     a.balance = 0.0f;
