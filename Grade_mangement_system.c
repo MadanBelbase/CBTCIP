@@ -141,7 +141,6 @@ void calculation()
         }
     }
 
-    // Write updated data back to file
     freopen("student_list.txt", "wb+", fp);
     fwrite(s, sizeof(struct student), student_count, fp);
     fclose(fp);
