@@ -11,7 +11,7 @@ int main() {
     fp = fopen(filename, "r");
     if (fp == NULL) {
         printf("Could not open file %s\n", filename);
-        return 1;
+        return 0;
     }
 
     while (fgets(line, sizeof(line), fp)) {
@@ -19,15 +19,19 @@ int main() {
         line_count++;
 
         // Count characters in the current line
-        while (line[i] != '\0') {
-            if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n') {
+        while (line[i] != '\0')
+         {
+            if (line[i] != ' ' && line[i] != '\t' && line[i] != '\n')
+             {
                 char_count++;
-                // Skip to the end of the word
-                while (line[i] != ' ' && line[i] != '\t' && line[i] != '\n' && line[i] != '\0') {
+                while (line[i] != ' ' && line[i] != '\t' && line[i] != '\n' && line[i] != '\0')
+                {   
                     i++;
                 }
-                word_count++;
-            } else {
+                 word_count++;
+            } 
+            else 
+            {
                 i++;
             }
         }

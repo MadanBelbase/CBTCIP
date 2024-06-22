@@ -89,7 +89,8 @@ void student_information() {
 }
 
 void display() {
-    FILE *fp = fopen("student_list.txt", "rb+");
+    FILE *fp ;
+    fp= fopen("student_list.txt", "rb+");
     if (fp == NULL) {
         printf("Error: File cannot be opened.\n");
         return;
@@ -102,7 +103,7 @@ void display() {
         printf("Address: %s\n", s[i].address);
         printf("Faculty: %s\n", s[i].faculty);
         printf("Subjects and Scores:\n");
-        for (int j = 0; j < s[i].nsubject; j++) {
+        for (j = 0; j < s[i].nsubject; j++) {
             printf("  %s: %.2f\n", s[i].subject[j], s[i].marks[j]);
         }
         printf("Average Score: %.2f\n", s[i].average);
